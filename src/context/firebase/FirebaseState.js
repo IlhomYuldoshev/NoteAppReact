@@ -4,7 +4,7 @@ import {FirebaseContext} from "./firebaseContext";
 import {firebaseReducer} from "./firebaseReducer";
 import {ADD_NOTE, FETCH_NOTES, REMOVE_NOTE, SHOW_LOADER} from "../types";
 
-const url = process.env.REACT_APP_DB_URL
+const url = process.env.REACT_APP_DB_URL || "https://react-notesapp-f7a39-default-rtdb.firebaseio.com"
 
 function FirebaseState({children}) {
   const initialState = {
