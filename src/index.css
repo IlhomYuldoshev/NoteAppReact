@@ -1,0 +1,146 @@
+body {
+  background-color: rgb(218, 244, 251);
+  font-weight: 500;
+  font-family: "Roboto", "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, rgb(30, 95, 235), rgb(113, 126, 153));
+}
+
+.navbar-logo {
+  margin-right: 30px;
+  font-size: 36px;
+  line-height: 48px;
+  font-family: monospace, sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-logo:hover {
+  opacity: 0.6;
+  color: #fff;
+}
+
+.navbar-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  padding: 4px 8px;
+  text-decoration: none;
+  margin-right: 24px;
+  color: #fff;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.list-group-item {
+  margin-bottom: 4px;
+}
+
+.notes-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-text-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.note-text {
+  margin-right: 1rem;
+  font-weight: 500;
+  color: #1A374D;
+}
+
+.note-date {
+  margin-right: 1rem;
+  color: #666;
+  font-weight: 300;
+}
+
+/*LOGIN*/
+
+.login-wrapper {
+  background-color: #fff;
+  color: rgba(0,0,0,0.6);
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+  0px -5px 35px rgba(255,255,255,0.3);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 10vh;
+  padding: 20px 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.errLogin {
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*CSS-TRANSITION-GROUP*/
+.alert-enter {
+  opacity: 0;
+}
+
+.alert-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-out;
+}
+
+.alert-exit {
+  opacity: 1;
+}
+
+.alert-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.note-enter-active {
+  animation: note 750ms ease-in alternate-reverse;
+}
+
+.note-exit-active {
+  animation: note 750ms ease-out forwards;
+}
+
+@keyframes note {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0.7;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
