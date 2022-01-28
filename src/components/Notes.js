@@ -1,21 +1,17 @@
-import React from "react";
-import {CSSTransition, TransitionGroup} from "react-transition-group";
-import NoteItem from "./NoteItem";
+import React, {useEffect, useState} from "react";
+import {TransitionGroup} from "react-transition-group";
+import {createNotes} from "./createNotesFunc";
 
 const Notes = ({ notes }) => {
+  const [notesHtml, setNotesHtml] = useState("")
+
+  useEffect(() => {
+    setNotesHtml(createNotes(notes))
+  }, [notes])
+
   return (
     <TransitionGroup component="ul" className="list-group">
-      {notes.map((note) => {
-        return (
-          <CSSTransition
-            key={note.id}
-            classNames="note"
-            timeout={750}
-          >
-            <NoteItem note={note}/>
-          </CSSTransition>
-        );
-      })}
+      {notesHtml}
     </TransitionGroup>
   );
 };

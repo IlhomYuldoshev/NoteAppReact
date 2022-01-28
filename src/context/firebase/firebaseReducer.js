@@ -6,7 +6,7 @@ const handlers = {
     ...state,
     notes: [...state.notes, payload]
   }),
-  [FETCH_NOTES]: (state, {payload}) => ({
+  [FETCH_NOTES]: (state, {payload = []}) => ({
     ...state,
     notes: payload,
     loading: false
